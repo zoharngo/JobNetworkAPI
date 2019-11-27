@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "JobsDbConnctionString": "server=(localdb)\\ProjectsV13;Database=jobsDb;Integrated Security=true;MultipleActiveResultSets=true;"
+  }
+}
