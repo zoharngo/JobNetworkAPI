@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JobNetworkAPI.Migrations
 {
     [DbContext(typeof(JobContext))]
-    [Migration("20191127203731_InitialDb")]
+    [Migration("20191129141148_InitialDb")]
     partial class InitialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,9 +24,7 @@ namespace JobNetworkAPI.Migrations
             modelBuilder.Entity("JobNetworkAPI.Data.Entities.Job", b =>
                 {
                     b.Property<int>("JobId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("CompanyName")
                         .HasColumnType("nvarchar(max)");
@@ -56,16 +54,14 @@ namespace JobNetworkAPI.Migrations
             modelBuilder.Entity("JobNetworkAPI.Data.Entities.JobTitle", b =>
                 {
                     b.Property<int>("JobTitleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("JobTitleText")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("JobTitleId");
 
-                    b.ToTable("jobTitles");
+                    b.ToTable("JobTitles");
                 });
 
             modelBuilder.Entity("JobNetworkAPI.Data.Entities.Job", b =>

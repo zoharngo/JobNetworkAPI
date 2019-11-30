@@ -8,24 +8,22 @@ namespace JobNetworkAPI.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "jobTitles",
+                name: "JobTitles",
                 columns: table => new
                 {
-                    JobTitleId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    JobTitleId = table.Column<int>(nullable: false),
                     JobTitleText = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_jobTitles", x => x.JobTitleId);
+                    table.PrimaryKey("PK_JobTitles", x => x.JobTitleId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Jobs",
                 columns: table => new
                 {
-                    JobId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    JobId = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     CompanyName = table.Column<string>(nullable: true),
                     JobLocation = table.Column<string>(nullable: true),
@@ -37,9 +35,9 @@ namespace JobNetworkAPI.Migrations
                 {
                     table.PrimaryKey("PK_Jobs", x => x.JobId);
                     table.ForeignKey(
-                        name: "FK_Jobs_jobTitles_JobTitleId",
+                        name: "FK_Jobs_JobTitles_JobTitleId",
                         column: x => x.JobTitleId,
-                        principalTable: "jobTitles",
+                        principalTable: "JobTitles",
                         principalColumn: "JobTitleId",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -56,7 +54,7 @@ namespace JobNetworkAPI.Migrations
                 name: "Jobs");
 
             migrationBuilder.DropTable(
-                name: "jobTitles");
+                name: "JobTitles");
         }
     }
 }

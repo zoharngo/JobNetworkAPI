@@ -12,7 +12,7 @@ namespace JobNetworkAPI.Data
         public JobContext(DbContextOptions<JobContext> options) : base(options)
         {}
         public DbSet<Job> Jobs { get; set; }
-        public DbSet<JobTitle> jobTitles { get; set; }
+        public DbSet<JobTitle> JobTitles { get; set; }
 
     }
 }

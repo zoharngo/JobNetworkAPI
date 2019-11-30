@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace JobNetworkAPI.Data.Entities
 {
     public class Job
     {
+        [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int JobId { get; set; }
         public string Title { get; set; }
         public string CompanyName { get; set; }

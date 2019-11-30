@@ -1,0 +1,26 @@
+[
+  {
+    "JobTitleId": 8,
+    "JobTitleText": "Personal Assitanant"
+  },
+  {
+    "JobTitleId": 11,
+    "JobTitleText": "Programmer"
+  },
+  {
+    "JobTitleId": 3,
+    "JobTitleText": "Driver Track"
+  },
+  {
+    "JobTitleId": 7,
+    "JobTitleText": "Delivery Driver"
+  },
+  {
+    "JobTitleId": 17,
+    "JobTitleText": "Fire Alarm Technician"
+  },
+  {
+    "JobTitleId": 12,
+    "JobTitleText": "Computer Technician"
+  }
+]

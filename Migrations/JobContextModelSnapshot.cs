@@ -22,9 +22,7 @@ namespace JobNetworkAPI.Migrations
             modelBuilder.Entity("JobNetworkAPI.Data.Entities.Job", b =>
                 {
                     b.Property<int>("JobId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("CompanyName")
                         .HasColumnType("nvarchar(max)");
@@ -54,16 +52,14 @@ namespace JobNetworkAPI.Migrations
             modelBuilder.Entity("JobNetworkAPI.Data.Entities.JobTitle", b =>
                 {
                     b.Property<int>("JobTitleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("JobTitleText")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("JobTitleId");
 
-                    b.ToTable("jobTitles");
+                    b.ToTable("JobTitles");
                 });
 
             modelBuilder.Entity("JobNetworkAPI.Data.Entities.Job", b =>

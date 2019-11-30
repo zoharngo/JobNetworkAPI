@@ -6,14 +6,30 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using JobNetworkAPI.Data;
 
 namespace JobNetworkAPI
 {
     public class Program
     {
         public static void Main(string[] args)
+        { 
+            var host = CreateHostBuilder(args).Build();
+            SeedDB(host);
+            host.Run();
+        }
+
+        private static void SeedDB(IHost host)
         {
-            CreateHostBuilder(args).Build().Run();
+            var scopeFactory = host.Services.GetService<IServiceScopeFactory>();
+
+            using (var scope = scopeFactory.CreateScope())
+            {
+                var seeder = scope.ServiceProvider.GetService<DBSeeder>();
+                seeder.Seed();
+            }
+            
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
