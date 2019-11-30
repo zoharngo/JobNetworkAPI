@@ -42,7 +42,7 @@ namespace JobNetworkAPI.Data
         {
             try
             {
-                var JobTitleTextSearch = q.Trim().ToLower();
+                var JobTitleTextSearch = q != null? q.Trim().ToLower(): "";
                 var r = new Regex("^[A-Za-z\\s]+");
                 if (r.IsMatch(JobTitleTextSearch))
                 {
