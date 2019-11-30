@@ -11,6 +11,7 @@ namespace JobNetworkAPI
 {
     public class Startup
     {
+        readonly string _allowOrigins = "_allowOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -25,6 +26,15 @@ namespace JobNetworkAPI
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("JobsDbConnctionString"));
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(_allowOrigins, builder =>
+                {
+                    builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+
             services.AddTransient<DBSeeder>();
             services.AddScoped<IJobRepository, JobRepository>();
             services.AddControllers().SetCompatibilityVersion(CompatibilityVersion.Latest);
@@ -37,12 +47,8 @@ namespace JobNetworkAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
-
+            app.UseCors(_allowOrigins);
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

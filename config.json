@@ -4,8 +4,10 @@
   },
   "Logging": {
     "LogLevel": {
+      "Default": "Information",
       "Microsoft": "Warning",
-      "Default": "Information"
-    } 
-  }
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
 }
