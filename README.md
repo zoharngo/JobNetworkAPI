@@ -5,7 +5,7 @@
 3. **Clone [JobNetworkAPI](https://github.com/zoharngo/JobNetworkAPI)**
 4. **Clone [Client React App](https://github.com/zoharngo/jobnetwork)**
 
-### Create DB and Perform migration:
+## Create DB and Perform Migration:
 1. **Make sure the config.json (JobNetworkAPI/config.json) connectionString setup to one of your local db instace** - 
 ***default connection string configured as follow:***
 
@@ -20,7 +20,7 @@
 **(Ignore warnning 
 ***"The EF Core tools version '3.0.0' is older than that of the runtime '3.0.1'. Update the tools for the latest features and bug fixes.***" => There is [open issue](https://github.com/aspnet/EntityFrameworkCore/issues/18977))** 
 
-### Start Server Application:
+## Start Server Application:
 1. **Open commandLine inside project root folder** - `JobNetworkAPI`
 
 2. **Run** - `dotnet run` - API Server listen to port 5000.
@@ -35,8 +35,8 @@
   
 ****Alternately you can launch server in debug mode from visual studio*** 
 
-**(In debug mode API Server listen will to port 8888).** 
+**(In debug mode API Server will listen to port 8888).** 
 
-### Start Client Application:
+## Start Client Application:
 4. **Refer to [README.md](https://github.com/zoharngo/jobnetwork/blob/master/README.md)**
 
